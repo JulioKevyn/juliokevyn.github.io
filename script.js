@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- LÓGICA EXCLUSIVA DA PÁGINA INICIAL (INDEX.HTML) ---
-    if (document.querySelector('.hero-section')) {
+    // --- LÓGICA EXCLUSIVA DA PÁGINA INICIAL ---
+    if (document.body.id === 'home-page') {
         const carouselTrack = document.querySelector('.carousel-track');
         const carouselSlides = Array.from(document.querySelectorAll('.project-card'));
         const prevButton = document.querySelector('.carousel-nav.prev');
@@ -171,8 +171,8 @@ document.addEventListener('DOMContentLoaded', () => {
         adjustCarouselOnResize();
     }
 
-    // --- LÓGICA EXCLUSIVA DA PÁGINA DE SITES (SITES.HTML) ---
-    if (document.getElementById('sites-page')) {
+    // --- LÓGICA EXCLUSIVA DA PÁGINA DE SITES ---
+    if (document.body.id === 'sites-page') {
         const tabsContainer = document.querySelector('.category-tabs');
         const gridContainer = document.querySelector('.template-grid');
 
