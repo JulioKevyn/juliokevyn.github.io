@@ -28,7 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const carouselDotsContainer = document.querySelector('.carousel-dots');
         const viewDetailsButtons = document.querySelectorAll('.view-details-btn');
         const projectModals = document.querySelectorAll('.project-modal');
-        const closeButtons = document.querySelectorAll('.project-modal .close-button');
         const contactForm = document.getElementById('contact-form');
         const formStatus = document.getElementById('form-status');
         const formspreeEndpoint = 'https://formspree.io/f/mrbkqgnp';
@@ -132,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        closeButtons.forEach(button => {
+        document.querySelectorAll('.project-modal .close-button').forEach(button => {
             button.addEventListener('click', () => {
                 closeModal(button.closest('.project-modal'));
             });
@@ -169,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
         
-        // Inicialização do carrossel na página principal
         adjustCarouselOnResize();
     }
 
@@ -179,6 +177,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const gridContainer = document.querySelector('.template-grid');
 
         const loadAndDisplayTemplates = async () => {
+            if (!tabsContainer || !gridContainer) return;
+            
             try {
                 const response = await fetch('templates.json');
                 if (!response.ok) throw new Error('A rede não respondeu bem.');
@@ -186,14 +186,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const categories = ['Todos', ...new Set(templates.map(t => t.category))];
                 
-                // Criamos as abas dinamicamente
                 tabsContainer.innerHTML = categories.map(category => 
                     `<button class="tab-btn ${category === 'Todos' ? 'active' : ''}" data-category="${category}">
-                        ${category}
+                        ${category.replace(/_/g, ' ')}
                     </button>`
                 ).join('');
 
-                // Função para mostrar os cards filtrados
                 const displayCards = (filter) => {
                     const filteredTemplates = (filter === 'Todos') 
                         ? templates 
@@ -212,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     `).join('');
                 };
 
-                // Adicionamos o evento de clique nas abas
                 tabsContainer.addEventListener('click', (e) => {
                     if (e.target.classList.contains('tab-btn')) {
                         tabsContainer.querySelector('.active').classList.remove('active');
@@ -221,7 +218,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
 
-                // Mostra todos os cards para começar
                 displayCards('Todos');
 
             } catch (error) {
@@ -233,3 +229,4 @@ document.addEventListener('DOMContentLoaded', () => {
         loadAndDisplayTemplates();
     }
 });
+
