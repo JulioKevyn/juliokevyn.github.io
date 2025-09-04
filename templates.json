@@ -1,0 +1,302 @@
+[
+    {
+        "category": "Advogado",
+        "title": "Modelo 1 para Advogado",
+        "thumbnail": "images/templates/advogado-modelo1.png",
+        "url": "Advogado/modelo1/modelo1advogados.html"
+    },
+    {
+        "category": "Advogado",
+        "title": "Modelo 2 para Advogado",
+        "thumbnail": "images/templates/advogado-modelo2.png",
+        "url": "Advogado/modelo2/modelo2advogados.html"
+    },
+    {
+        "category": "Advogado",
+        "title": "Modelo 3 para Advogado",
+        "thumbnail": "images/templates/advogado-modelo3.png",
+        "url": "Advogado/modelo3/modelo3advogados.html"
+    },
+    {
+        "category": "Advogado",
+        "title": "Modelo 4 para Advogado",
+        "thumbnail": "images/templates/advogado-modelo4.png",
+        "url": "Advogado/modelo4/modelo4advogados.html"
+    },
+    {
+        "category": "Advogado",
+        "title": "Modelo 5 para Advogado",
+        "thumbnail": "images/templates/advogado-modelo5.png",
+        "url": "Advogado/modelo5/modelo5advogados.html"
+    },
+    {
+        "category": "Arquiteto",
+        "title": "Modelo 1 para Arquiteto",
+        "thumbnail": "images/templates/arquiteto-modelo1.png",
+        "url": "Arquiteto/modelo1/modelo1arquitetos.html"
+    },
+    {
+        "category": "Arquiteto",
+        "title": "Modelo 2 para Arquiteto",
+        "thumbnail": "images/templates/arquiteto-modelo2.png",
+        "url": "Arquiteto/modelo2/modelo2arquitetos.html"
+    },
+    {
+        "category": "Arquiteto",
+        "title": "Modelo 3 para Arquiteto",
+        "thumbnail": "images/templates/arquiteto-modelo3.png",
+        "url": "Arquiteto/modelo3/modelo3arquitetos.html"
+    },
+    {
+        "category": "Arquiteto",
+        "title": "Modelo 4 para Arquiteto",
+        "thumbnail": "images/templates/arquiteto-modelo4.png",
+        "url": "Arquiteto/modelo4/modelo4arquitetos.html"
+    },
+    {
+        "category": "Arquiteto",
+        "title": "Modelo 5 para Arquiteto",
+        "thumbnail": "images/templates/arquiteto-modelo5.png",
+        "url": "Arquiteto/modelo5/modelo5arquitetos.html"
+    },
+    {
+        "category": "Clínica de Estética",
+        "title": "Modelo 1 para Clínica de Estética",
+        "thumbnail": "images/templates/clinicadeestetica-modelo1.png",
+        "url": "Clínica de Estética/modelo1/modelo1clinicadeestetica.html"
+    },
+    {
+        "category": "Clínica de Estética",
+        "title": "Modelo 2 para Clínica de Estética",
+        "thumbnail": "images/templates/clinicadeestetica-modelo2.png",
+        "url": "Clínica de Estética/modelo2/modelo2clinicadeestetica.html"
+    },
+    {
+        "category": "Clínica de Estética",
+        "title": "Modelo 3 para Clínica de Estética",
+        "thumbnail": "images/templates/clinicadeestetica-modelo3.png",
+        "url": "Clínica de Estética/modelo3/modelo3clinicadeestetica.html"
+    },
+    {
+        "category": "Clínica de Estética",
+        "title": "Modelo 4 para Clínica de Estética",
+        "thumbnail": "images/templates/clinicadeestetica-modelo4.png",
+        "url": "Clínica de Estética/modelo4/modelo4clinicadeestetica.html"
+    },
+    {
+        "category": "Clínica de Estética",
+        "title": "Modelo 5 para Clínica de Estética",
+        "thumbnail": "images/templates/clinicadeestetica-modelo5.png",
+        "url": "Clínica de Estética/modelo5/modelo5clinicadeestetica.html"
+    },
+    {
+        "category": "Dentista",
+        "title": "Modelo 1 para Dentista",
+        "thumbnail": "images/templates/dentista-modelo1.png",
+        "url": "Dentista/modelo1/modelo1dentistas.html"
+    },
+    {
+        "category": "Dentista",
+        "title": "Modelo 2 para Dentista",
+        "thumbnail": "images/templates/dentista-modelo2.png",
+        "url": "Dentista/modelo2/modelo2dentistas.html"
+    },
+    {
+        "category": "Dentista",
+        "title": "Modelo 3 para Dentista",
+        "thumbnail": "images/templates/dentista-modelo3.png",
+        "url": "Dentista/modelo3/modelo3dentistas.html"
+    },
+    {
+        "category": "Dentista",
+        "title": "Modelo 4 para Dentista",
+        "thumbnail": "images/templates/dentista-modelo4.png",
+        "url": "Dentista/modelo4/modelo4dentistas.html"
+    },
+    {
+        "category": "Dentista",
+        "title": "Modelo 5 para Dentista",
+        "thumbnail": "images/templates/dentista-modelo5.png",
+        "url": "Dentista/modelo5/modelo5dentistas.html"
+    },
+    {
+        "category": "Imobiliária",
+        "title": "Modelo 1 para Imobiliária",
+        "thumbnail": "images/templates/imobiliaria-modelo1.png",
+        "url": "Imobiliária/modelo1/modelo1imobiliarias.html"
+    },
+    {
+        "category": "Imobiliária",
+        "title": "Modelo 2 para Imobiliária",
+        "thumbnail": "images/templates/imobiliaria-modelo2.png",
+        "url": "Imobiliária/modelo2/modelo2imobiliarias.html"
+    },
+    {
+        "category": "Imobiliária",
+        "title": "Modelo 3 para Imobiliária",
+        "thumbnail": "images/templates/imobiliaria-modelo3.png",
+        "url": "Imobiliária/modelo3/modelo3imobiliarias.html"
+    },
+    {
+        "category": "Imobiliária",
+        "title": "Modelo 4 para Imobiliária",
+        "thumbnail": "images/templates/imobiliaria-modelo4.png",
+        "url": "Imobiliária/modelo4/modelo4imobiliarias.html"
+    },
+    {
+        "category": "Imobiliária",
+        "title": "Modelo 5 para Imobiliária",
+        "thumbnail": "images/templates/imobiliaria-modelo5.png",
+        "url": "Imobiliária/modelo5/modelo5imobiliarias.html"
+    },
+    {
+        "category": "Salão de Beleza",
+        "title": "Modelo 1 para Salão de Beleza",
+        "thumbnail": "images/templates/salaodebeleza-modelo1.png",
+        "url": "Salão de Beleza/modelo1/modelo1salaodebeleza.html"
+    },
+    {
+        "category": "Salão de Beleza",
+        "title": "Modelo 2 para Salão de Beleza",
+        "thumbnail": "images/templates/salaodebeleza-modelo2.png",
+        "url": "Salão de Beleza/modelo2/modelo2salaodebeleza.html"
+    },
+    {
+        "category": "Salão de Beleza",
+        "title": "Modelo 3 para Salão de Beleza",
+        "thumbnail": "images/templates/salaodebeleza-modelo3.png",
+        "url": "Salão de Beleza/modelo3/modelo3salaodebeleza.html"
+    },
+    {
+        "category": "Salão de Beleza",
+        "title": "Modelo 4 para Salão de Beleza",
+        "thumbnail": "images/templates/salaodebeleza-modelo4.png",
+        "url": "Salão de Beleza/modelo4/modelo4salaodebeleza.html"
+    },
+    {
+        "category": "Salão de Beleza",
+        "title": "Modelo 5 para Salão de Beleza",
+        "thumbnail": "images/templates/salaodebeleza-modelo5.png",
+        "url": "Salão de Beleza/modelo5/modelo5salaodebeleza.html"
+    },
+    {
+        "category": "Hotel",
+        "title": "Modelo 1 para Hotel",
+        "thumbnail": "images/templates/hotel-modelo1.png",
+        "url": "Hotel/modelo1/modelo1hoteis.html"
+    },
+    {
+        "category": "Hotel",
+        "title": "Modelo 2 para Hotel",
+        "thumbnail": "images/templates/hotel-modelo2.png",
+        "url": "Hotel/modelo2/modelo2hoteis.html"
+    },
+    {
+        "category": "Hotel",
+        "title": "Modelo 3 para Hotel",
+        "thumbnail": "images/templates/hotel-modelo3.png",
+        "url": "Hotel/modelo3/modelo3hoteis.html"
+    },
+    {
+        "category": "Hotel",
+        "title": "Modelo 4 para Hotel",
+        "thumbnail": "images/templates/hotel-modelo4.png",
+        "url": "Hotel/modelo4/modelo4hoteis.html"
+    },
+    {
+        "category": "Hotel",
+        "title": "Modelo 5 para Hotel",
+        "thumbnail": "images/templates/hotel-modelo5.png",
+        "url": "Hotel/modelo5/modelo5hoteis.html"
+    },
+    {
+        "category": "Designer de Interiores",
+        "title": "Modelo 1 para Designer de Interiores",
+        "thumbnail": "images/templates/designerdeinteriores-modelo1.png",
+        "url": "Designer de Interiores/modelo1/modelo1designerdeinteriores.html"
+    },
+    {
+        "category": "Designer de Interiores",
+        "title": "Modelo 2 para Designer de Interiores",
+        "thumbnail": "images/templates/designerdeinteriores-modelo2.png",
+        "url": "Designer de Interiores/modelo2/modelo2designerdeinteriores.html"
+    },
+    {
+        "category": "Designer de Interiores",
+        "title": "Modelo 3 para Designer de Interiores",
+        "thumbnail": "images/templates/designerdeinteriores-modelo3.png",
+        "url": "Designer de Interiores/modelo3/modelo3designerdeinteriores.html"
+    },
+    {
+        "category": "Designer de Interiores",
+        "title": "Modelo 4 para Designer de Interiores",
+        "thumbnail": "images/templates/designerdeinteriores-modelo4.png",
+        "url": "Designer de Interiores/modelo4/modelo4designerdeinteriores.html"
+    },
+    {
+        "category": "Designer de Interiores",
+        "title": "Modelo 5 para Designer de Interiores",
+        "thumbnail": "images/templates/designerdeinteriores-modelo5.png",
+        "url": "Designer de Interiores/modelo5/modelo5designerdeinteriores.html"
+    },
+    {
+        "category": "Consultório de Psicologia",
+        "title": "Modelo 1 para Consultório de Psicologia",
+        "thumbnail": "images/templates/consultoriodepsicologia-modelo1.png",
+        "url": "Consultório de Psicologia/modelo1/modelo1consultoriodepsicologia.html"
+    },
+    {
+        "category": "Consultório de Psicologia",
+        "title": "Modelo 2 para Consultório de Psicologia",
+        "thumbnail": "images/templates/consultoriodepsicologia-modelo2.png",
+        "url": "Consultório de Psicologia/modelo2/modelo2consultoriodepsicologia.html"
+    },
+    {
+        "category": "Consultório de Psicologia",
+        "title": "Modelo 3 para Consultório de Psicologia",
+        "thumbnail": "images/templates/consultoriodepsicologia-modelo3.png",
+        "url": "Consultório de Psicologia/modelo3/modelo3consultoriodepsicologia.html"
+    },
+    {
+        "category": "Consultório de Psicologia",
+        "title": "Modelo 4 para Consultório de Psicologia",
+        "thumbnail": "images/templates/consultoriodepsicologia-modelo4.png",
+        "url": "Consultório de Psicologia/modelo4/modelo4consultoriodepsicologia.html"
+    },
+    {
+        "category": "Consultório de Psicologia",
+        "title": "Modelo 5 para Consultório de Psicologia",
+        "thumbnail": "images/templates/consultoriodepsicologia-modelo5.png",
+        "url": "Consultório de Psicologia/modelo5/modelo5consultoriodepsicologia.html"
+    },
+    {
+        "category": "Nail Designer",
+        "title": "Modelo 1 para Nail Designer",
+        "thumbnail": "images/templates/naildesigner-modelo1.png",
+        "url": "Nail Designer/modelo1/modelo1naildesigner.html"
+    },
+    {
+        "category": "Nail Designer",
+        "title": "Modelo 2 para Nail Designer",
+        "thumbnail": "images/templates/naildesigner-modelo2.png",
+        "url": "Nail Designer/modelo2/modelo2naildesigner.html"
+    },
+    {
+        "category": "Nail Designer",
+        "title": "Modelo 3 para Nail Designer",
+        "thumbnail": "images/templates/naildesigner-modelo3.png",
+        "url": "Nail Designer/modelo3/modelo3naildesigner.html"
+    },
+    {
+        "category": "Nail Designer",
+        "title": "Modelo 4 para Nail Designer",
+        "thumbnail": "images/templates/naildesigner-modelo4.png",
+        "url": "Nail Designer/modelo4/modelo4naildesigner.html"
+    },
+    {
+        "category": "Nail Designer",
+        "title": "Modelo 5 para Nail Designer",
+        "thumbnail": "images/templates/naildesigner-modelo5.png",
+        "url": "Nail Designer/modelo5/modelo5naildesigner.html"
+    }
+]
