@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Julio Kevyn | Tech Lead</title>
+    
+    <!-- Ícones (FontAwesome) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Fontes (Inter & JetBrains Mono) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET E VARIÁVEIS --- */
+        :root {
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --primary: #06b6d4; /* Ciano */
+            --secondary: #8b5cf6; /* Roxo */
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* --- UTILITÁRIOS --- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .highlight {
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* --- NAVBAR --- */
+        nav {
+            padding: 20px 0;
+            background: rgba(15, 23, 42, 0.9);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .btn-contact {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-contact:hover {
+            background: var(--primary);
+            color: #fff;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: radial-gradient(circle at top right, rgba(6, 182, 212, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(139, 92, 246, 0.1), transparent 40%);
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .hero h1 span {
+            background: -webkit-linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .typewriter {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            min-height: 1.5em;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            background-color: var(--primary);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* --- STATS BAR --- */
+        .stats-bar {
+            background: rgba(30, 41, 59, 0.5);
+            border-y: 1px solid rgba(255,255,255,0.05);
+            padding: 40px 0;
+            margin-bottom: 60px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.5rem;
+            color: var(--text-main);
+            margin-bottom: 5px;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- FILTROS --- */
+        .filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--bg-card);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.1);
+        }
+
+        /* --- GRID DE PROJETOS --- */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            padding-bottom: 100px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .badge-rpa { background: rgba(6, 182, 212, 0.1); color: var(--primary); border: 1px solid rgba(6, 182, 212, 0.2); }
+        .badge-web { background: rgba(139, 92, 246, 0.1); color: var(--secondary); border: 1px solid rgba(139, 92, 246, 0.2); }
+        .badge-dados { background: rgba(16, 185, 129, 0.1); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.2); }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .card-meta {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 15px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        .btn-whatsapp {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            background: rgba(37, 211, 102, 0.1); /* Verde WhatsApp */
+            color: #25D366;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 1px solid rgba(37, 211, 102, 0.2);
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background: #25D366;
+            color: #000;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navegação -->
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">&lt;DEV.RPA /&gt;</a>
+            <a href="https://wa.me/5511966209914" class="btn-contact">
+                <i class="fab fa-whatsapp"></i> Fale Comigo
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Automação <br><span>Inteligente</span></h1>
+            <div class="typewriter">
+                Me Chamo Julio e crio <span id="typing-text"></span><span class="cursor">|</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Estatísticas -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <h3>65+</h3>
+                <p>Projetos Entregues</p>
+            </div>
+            <div class="stat-item">
+                <h3>R$ 500k+</h3>
+                <p>Economia Mensal Gerada</p>
+            </div>
+            <div class="stat-item">
+                <h3>10.000h+</h3>
+                <p>Poupadas em Processos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <div class="container">
+        
+        <!-- Filtros -->
+        <div class="filters">
+            <button class="filter-btn active" onclick="filterProjects('all')">Todos</button>
+            <button class="filter-btn" onclick="filterProjects('RPA')">RPA</button>
+            <button class="filter-btn" onclick="filterProjects('Web App')">Web Apps</button>
+            <button class="filter-btn" onclick="filterProjects('Dados')">Dados & BI</button>
+            <button class="filter-btn" onclick="filterProjects('Scripting')">Scripts Python</button>
+        </div>
+
+        <!-- Grid de Projetos -->
+        <div class="projects-grid" id="projects-container">
+            <!-- Os cards serão inseridos aqui via JavaScript -->
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Desenvolvedor RPA Full Stack. Todos os direitos reservados.</p>
+        <p style="margin-top: 10px; opacity: 0.5; font-size: 0.8rem;">Hospedado no GitHub Pages</p>
+    </footer>
+
+    <!-- SCRIPT DA MÁGICA -->
+    <script>
+        // Dados Completos dos Projetos (Baseado na sua lista)
+        const projects = [
+            {
+                title: "RPA CIOT",
+                desc: "Automação para lançamento automático de CIOT diretamente no sistema Senior, otimizando a auditoria de frete.",
+                area: "Auditoria de Frete",
+                type: "RPA",
+                gain: "R$ 5.000/mês"
+            },
+            {
+                title: "RPA Cadastro Tabelas Redespacho",
+                desc: "Cadastro de tabelas de frete para transportadoras de redespacho no sistema ESL com replicação de custos.",
+                area: "Auditoria de Frete",
+                type: "RPA",
+                gain: "25h/semana"
+            },
+            {
+                title: "RPA NF Agrupada Senior",
+                desc: "Robô responsável pelo lançamento de Notas Fiscais agrupadas no sistema Senior.",
+                area: "Recebimento Fiscal",
+                type: "RPA",
+                gain: "R$ 10.000/mês"
+            },
+            {
+                title: "Sistema de Transportadoras",
+                desc: "Web App para cadastro de transportadoras/veículos no WMS e ESL a partir de planilha.",
+                area: "Operação",
+                type: "Web App",
+                gain: "Redução Erros"
+            },
+            {
+                title: "RPA WMS (Anexo Arquivo)",
+                desc: "Anexa PDF da Nota Fiscal de Entrada ao registro no WMS automaticamente.",
+                area: "Recebimento Fiscal",
+                type: "RPA",
+                gain: "R$ 3.000/mês"
+            },
+            {
+                title: "RPA Ordem de Compra",
+                desc: "Lançamento automatizado de Ordens de Compra (OC) no sistema Senior.",
+                area: "Recebimento Fiscal",
+                type: "RPA",
+                gain: "R$ 7.000/mês"
+            },
+            {
+                title: "Relatório CTe (Senior vs ESL)",
+                desc: "Comparação automática entre relatórios de CTe do Senior e ESL.",
+                area: "Recebimento Fiscal",
+                type: "Scripting",
+                gain: "6h/semana"
+            },
+            {
+                title: "Solução Devolução de NF",
+                desc: "Centraliza e otimiza o processo de devolução de NF, eliminando planilhas múltiplas.",
+                area: "Recebimento Fiscal",
+                type: "Web App",
+                gain: "Integração"
+            },
+            {
+                title: "Aplicação OFX",
+                desc: "Conversão e tratamento de extratos bancários para formato OFX para conciliação no Senior.",
+                area: "Financeiro",
+                type: "Scripting",
+                gain: "R$ 2.000/mês"
+            },
+            {
+                title: "Hub de Automações",
+                desc: "Plataforma central que reúne todas as ferramentas, oferecendo governança e acesso único.",
+                area: "TI / RPA",
+                type: "Web App",
+                gain: "Governança"
+            },
+            {
+                title: "Extrator Relatório Webclient",
+                desc: "Extrai relatórios do webclient para Atendimento, consolidando dados.",
+                area: "Atendimento",
+                type: "RPA",
+                gain: "Agilidade"
+            },
+            {
+                title: "Tratamento E-mails EDI SFTP",
+                desc: "Monitora e trata e-mails de ocorrências EDI, enviando arquivos para SFTP.",
+                area: "TI / RPA",
+                type: "RPA",
+                gain: "Automação Manual"
+            },
+            {
+                title: "Tratamento SFTP Loggi",
+                desc: "Processa arquivos de SFTP relacionados à transportadora Loggi.",
+                area: "TI / RPA",
+                type: "RPA",
+                gain: "Integração"
+            },
+            {
+                title: "Amarrador Transportador",
+                desc: "Processo agendado que amarra a transportadora correta na NF de saída.",
+                area: "Operação",
+                type: "RPA",
+                gain: "Zero Erros"
+            },
+            {
+                title: "Formulário de Reembolso",
+                desc: "Sistema Power Automate com fluxo de aprovação integrado ao Teams/E-mail.",
+                area: "Controladoria",
+                type: "RPA",
+                gain: "Produtividade"
+            },
+            {
+                title: "Dashboard Rentabilidade",
+                desc: "Painel BI para análise detalhada de rentabilidade por cliente.",
+                area: "Controladoria",
+                type: "Dados",
+                gain: "Decisão Estratégica"
+            },
+            {
+                title: "Comparação NF (Contábil)",
+                desc: "Script Python para tratar e comparar relatórios contábeis e dados fiscais.",
+                area: "Contabilidade",
+                type: "Scripting",
+                gain: "5h/semana"
+            },
+            {
+                title: "Validação Livro Fiscal (XML)",
+                desc: "Validação automática do Livro Fiscal usando XMLs das notas.",
+                area: "Contabilidade",
+                type: "RPA",
+                gain: "R$ 4.000/mês"
+            },
+            {
+                title: "Scripts Qualyteam",
+                desc: "Download e tratamento automático de dados do Qualyteam para indicadores.",
+                area: "Qualidade",
+                type: "Scripting",
+                gain: "8h/semana"
+            },
+            {
+                title: "Cadastro Usuários em Massa",
+                desc: "Cadastro múltiplo de usuários no sistema via planilha Excel.",
+                area: "Cadastros",
+                type: "RPA",
+                gain: "Agilidade"
+            },
+            {
+                title: "Relacionamento Pessoas Massa",
+                desc: "Cria ou remove vínculos entre pessoas/entidades no sistema via planilha.",
+                area: "Cadastros",
+                type: "RPA",
+                gain: "Agilidade"
+            },
+            {
+                title: "Relacionamento Classes Massa",
+                desc: "Associa usuários a classes de produtos em massa via planilha.",
+                area: "Cadastros",
+                type: "RPA",
+                gain: "Agilidade"
+            },
+            {
+                title: "Cadastro Classes Produto",
+                desc: "Cadastra novas classes e hierarquias de produtos via planilha.",
+                area: "Cadastros",
+                type: "RPA",
+                gain: "Agilidade"
+            },
+            {
+                title: "Solicitação de Compras",
+                desc: "Formulário digital para solicitar compra ou cadastro de novos itens.",
+                area: "Compras",
+                type: "RPA",
+                gain: "Centralização"
+            },
+            {
+                title: "Consulta de CNPJ",
+                desc: "Busca informações de empresas via CNPJ, individual ou em lote.",
+                area: "Geral",
+                type: "Web App",
+                gain: "Consultas Rápidas"
+            },
+            {
+                title: "Consulta de CEP",
+                desc: "Busca endereços completos via CEP, individual ou em lote.",
+                area: "Geral",
+                type: "Web App",
+                gain: "Consultas Rápidas"
+            },
+            {
+                title: "Fechamento Nivea",
+                desc: "Processa planilha de fechamento Nivea, calculando totais.",
+                area: "Faturamento",
+                type: "RPA",
+                gain: "Redução Tempo"
+            },
+            {
+                title: "Divisão Planilha União Química",
+                desc: "Divide planilha em várias guias com base nos CNPJs.",
+                area: "Faturamento",
+                type: "RPA",
+                gain: "Redução Tempo"
+            },
+            {
+                title: "Envio/Recebimento Notas",
+                desc: "Sistema de envio de NFs ao setor fiscal com painel de gerenciamento.",
+                area: "Recebimento Fiscal",
+                type: "Web App",
+                gain: "Rastreabilidade"
+            },
+            {
+                title: "Robô de Precificação",
+                desc: "Automação para precificar notas fiscais com múltiplas regras.",
+                area: "Faturamento",
+                type: "RPA",
+                gain: "Redução Tempo"
+            },
+            {
+                title: "Ferramentas Gerais",
+                desc: "Suite com conversor de texto, calculadora de datas e unificador de PDFs.",
+                area: "Geral",
+                type: "Web App",
+                gain: "Produtividade"
+            },
+            {
+                title: "RPA Carta de Correção",
+                desc: "Emissão de cartas de correção via API Senior lendo de planilha.",
+                area: "Recebimento Fiscal",
+                type: "RPA",
+                gain: "Automação Manual"
+            },
+            {
+                title: "RPA Pedágio CIOT",
+                desc: "Lançamento de pedágios CIOT no Senior simulando ação humana.",
+                area: "Auditoria",
+                type: "RPA",
+                gain: "Automação Manual"
+            },
+            {
+                title: "Fechamento LG",
+                desc: "Aplicação via HUB para auxiliar no fechamento da LG.",
+                area: "Faturamento",
+                type: "Web App",
+                gain: "Automação Manual"
+            },
+            {
+                title: "Conferência EDI Ocorrências",
+                desc: "RPA background para conferir ocorrências via e-mail e ESL.",
+                area: "TI / RPA",
+                type: "RPA",
+                gain: "Background"
+            },
+            {
+                title: "Relatórios Unilever SFTP",
+                desc: "Salva saldo, tracking e movimentações em SFTP compartilhado.",
+                area: "TI / RPA",
+                type: "RPA",
+                gain: "Background"
+            },
+            {
+                title: "Notificação Feriados",
+                desc: "RPA programado para notificar feriados para as bases.",
+                area: "Gestão Bases",
+                type: "RPA",
+                gain: "Background"
+            },
+            {
+                title: "Inventário Gestão Bases",
+                desc: "Aplicação web utilizada para contagem de inventário.",
+                area: "Gestão Bases",
+                type: "Web App",
+                gain: "Controle"
+            },
+            {
+                title: "RPA Puxar Retroativos",
+                desc: "Sistema acionado manualmente para puxar retroativos do dia anterior.",
+                area: "Gestão Bases",
+                type: "RPA",
+                gain: "Recuperação"
+            },
+            {
+                title: "RPA Cadastro Mesorregiões",
+                desc: "Cadastra cidades em grupos de mesorregião no ESL.",
+                area: "Projetos",
+                type: "RPA",
+                gain: "Cadastro"
+            },
+            {
+                title: "RPA Faixas CEP ESL",
+                desc: "Importa arquivos .csv de faixas de CEP no ESL via tela.",
+                area: "Projetos",
+                type: "RPA",
+                gain: "Cadastro"
+            },
+            {
+                title: "Cadastro Motorista Massa",
+                desc: "Criação de motorista agregado na SENIOR e ESL em massa.",
+                area: "Recebimento Fiscal",
+                type: "RPA",
+                gain: "Tempo e Esforço"
+            }
+        ];
+
+        // Mapeamento de Cores por Tipo
+        const typeColors = {
+            'RPA': 'badge-rpa',
+            'Web App': 'badge-web',
+            'Dados': 'badge-dados',
+            'Scripting': 'badge-rpa' // Reutilizando estilo
+        };
+
+        // Renderização dos Projetos
+        const container = document.getElementById('projects-container');
+
+        function renderProjects(filter = 'all') {
+            container.innerHTML = '';
+            
+            projects.forEach(project => {
+                // Lógica de Filtro
+                // Normalizando strings para comparação
+                const pType = project.type.toLowerCase();
+                const filterKey = filter.toLowerCase();
+
+                let show = false;
+                if (filter === 'all') show = true;
+                else if (filter === 'Scripting' && pType.includes('script')) show = true;
+                else if (filter === 'Dados' && (pType.includes('dados') || pType.includes('bi'))) show = true;
+                else if (pType.includes(filterKey)) show = true;
+
+                if (show) {
+                    // Badge Color Logic
+                    let badgeClass = 'badge-rpa';
+                    if (project.type.includes('Web')) badgeClass = 'badge-web';
+                    if (project.type.includes('Dados') || project.type.includes('BI')) badgeClass = 'badge-dados';
+
+                    // WhatsApp Message Encoding
+                    const message = encodeURIComponent(`Olá, gostaria de saber sobre a automação: ${project.title}`);
+                    const wppLink = `https://wa.me/5511966209914?text=${message}`;
+
+                    const cardHTML = `
+                        <div class="card">
+                            <div class="card-header">
+                                <span class="badge ${badgeClass}"><i class="fas fa-robot"></i> ${project.type}</span>
+                                <span style="font-size:0.8rem; color:var(--text-muted);">${project.area}</span>
+                            </div>
+                            <h3>${project.title}</h3>
+                            <p>${project.desc}</p>
+                            
+                            <div class="card-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>${project.gain}</span>
+                                </div>
+                            </div>
+
+                            <a href="${wppLink}" target="_blank" class="btn-whatsapp">
+                                <i class="fab fa-whatsapp"></i> Consultar
+                            </a>
+                        </div>
+                    `;
+                    container.innerHTML += cardHTML;
+                }
+            });
+        }
+
+        // Event Listeners dos Filtros
+        const buttons = document.querySelectorAll('.filter-btn');
+        buttons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all
+                buttons.forEach(b => b.classList.remove('active'));
+                // Add to clicked
+                btn.classList.add('active');
+                
+                // Get filter value based on text content mapping
+                const text = btn.innerText;
+                let filterVal = 'all';
+                if(text === 'RPA') filterVal = 'RPA';
+                if(text === 'Web Apps') filterVal = 'Web App';
+                if(text === 'Dados & BI') filterVal = 'Dados';
+                if(text === 'Scripts Python') filterVal = 'Scripting';
+                
+                renderProjects(filterVal);
+            });
+        });
+
+        // Efeito de Digitação
+        const typeText = "Soluções RPA | PDV | Sites | Web Apps | Scrapings | Dashboards";
+        const typeElement = document.getElementById('typing-text');
+        let i = 0;
+        function typeWriter() {
+            if (i < typeText.length) {
+                typeElement.innerHTML += typeText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 100);
+            }
+        }
+
+        // Inicialização
+        window.onload = () => {
+            renderProjects();
+            typeWriter();
+        };
+
+    </script>
+</body>
+</html>
