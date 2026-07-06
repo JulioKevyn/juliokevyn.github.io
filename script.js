@@ -5,19 +5,25 @@
 const rpaProjects = [
     // Destaques para o Carrossel (Top 5)
     { title: "Sistema de Inventário", desc: "Sistema web mobile-first para contagem física de estoque. Permite auditoria em tempo real, leitura de códigos de barras e elimina o uso de papel na operação.", area: "Operacional", type: "Plataforma Web", gain: "Gestão", highlight: true },
-    { title: "RPA NF Agrupada Senior", desc: "Robô de alta performance que processa e lança centenas de Notas Fiscais agrupadas em minutos. Elimina dias de trabalho manual e garante 100% de precisão fiscal.", area: "Recebimento Fiscal", type: "RPA", gain: "R$ 10.000/mês", highlight: true },
-    { title: "RPA CIOT Automático", desc: "Automação crítica que gerencia o lançamento de CIOTs no ERP Senior. Evita multas pesadas por atraso e libera a equipe logística para tarefas estratégicas.", area: "Auditoria de Frete", type: "RPA", gain: "R$ 5.000/mês", highlight: true },
-    { title: "RPA Ordem de Compra", desc: "Sistema inteligente que lança Ordens de Compra automaticamente. Cruza dados do pedido com a nota fiscal, impedindo pagamentos indevidos.", area: "Recebimento Fiscal", type: "RPA", gain: "R$ 7.000/mês", highlight: true },
-    { title: "Validação Livro Fiscal", desc: "Auditoria digital que valida XMLs contra o sistema interno, eliminando a necessidade de conferência física de documentos e reduzindo riscos de compliance.", area: "Contabilidade", type: "RPA", gain: "R$ 4.000/mês", highlight: true },
+    { title: "RPA NF Agrupada Senior", desc: "Robô de alta performance que processa e lança centenas de Notas Fiscais agrupadas em minutos. Elimina dias de trabalho manual e garante 100% de precisão fiscal.", area: "Recebimento Fiscal", type: "RPA", gain: "R$ 240.000/ano", highlight: true },
+    { title: "RPA CIOT Automático", desc: "Automação crítica que gerencia o lançamento de CIOTs no ERP Senior. Evita multas pesadas por atraso e libera a equipe logística para tarefas estratégicas.", area: "Auditoria de Frete", type: "RPA", gain: "R$ 180.000/ano", highlight: true },
+    { title: "RPA Ordem de Compra", desc: "Sistema inteligente que lança Ordens de Compra automaticamente. Cruza dados do pedido com a nota fiscal, impedindo pagamentos indevidos.", area: "Recebimento Fiscal", type: "RPA", gain: "R$ 150.000/ano", highlight: true },
+    { title: "Validação Livro Fiscal", desc: "Auditoria digital que valida XMLs contra o sistema interno, eliminando a necessidade de conferência física de documentos e reduzindo riscos de compliance.", area: "Contabilidade", type: "RPA", gain: "R$ 96.000/ano", highlight: true },
     { title: "Hub de Automações", desc: "Plataforma centralizada para monitoramento em tempo real de todos os robôs da empresa. Garante governança, logs de execução e alertas de falha.", area: "TI / RPA", type: "Plataforma Web", gain: "Governança", highlight: true },
+    { title: "Orquestrador de Projetos com IA", desc: "Plataforma multi-agente que planeja, decompõe e acompanha projetos de ponta a ponta: gera cronogramas, distribui tarefas e antecipa riscos automaticamente.", area: "Inteligência Artificial", type: "Plataforma IA", gain: "R$ 200.000/ano", highlight: true },
+    { title: "Assistente de Voz Corporativo", desc: "Assistente com reconhecimento de fala, roteamento de intenções via LLM e execução de comandos em sistemas internos por voz.", area: "Inteligência Artificial", type: "Plataforma IA", gain: "Produtividade", highlight: true },
 
     // Outros Projetos
+    { title: "Chatbot WhatsApp com IA", desc: "Atendimento automatizado 24/7 com IA generativa, memória de conversa e integração com sistemas internos.", area: "Inteligência Artificial", type: "Plataforma IA", gain: "R$ 120.000/ano" },
+    { title: "Leitor Inteligente de Documentos", desc: "IA que extrai e lança dados de notas fiscais, contratos e propostas em PDF direto no ERP, sem digitação.", area: "Inteligência Artificial", type: "Plataforma IA", gain: "R$ 90.000/ano" },
+    { title: "Agente IA de Ocorrências", desc: "Agente que classifica ocorrências logísticas, sugere tratativas e responde clientes automaticamente com base em regras aprendidas.", area: "Inteligência Artificial", type: "Plataforma IA", gain: "R$ 110.000/ano" },
+    { title: "Análise Preditiva de Preços", desc: "Modelo de machine learning que analisa histórico de cotações e prevê variações de preço para otimizar compras.", area: "Inteligência Artificial", type: "Plataforma IA", gain: "Decisão" },
     { title: "Cadastro Tabelas Redespacho", desc: "Replicação automática de tabelas de frete complexas no sistema ESL.", area: "Auditoria de Frete", type: "RPA", gain: "25h/semana" },
     { title: "Sistema Cadastro Transportadoras", desc: "Portal web intuitivo para cadastro rápido e sem erros de motoristas no WMS.", area: "Operação", type: "Ferramenta Web", gain: "Sem erros" },
-    { title: "RPA WMS (Anexo Digital)", desc: "Robô que anexa automaticamente o PDF da Nota Fiscal ao registro no WMS.", area: "Recebimento Fiscal", type: "RPA", gain: "R$ 3.000/mês" },
+    { title: "RPA WMS (Anexo Digital)", desc: "Robô que anexa automaticamente o PDF da Nota Fiscal ao registro no WMS.", area: "Recebimento Fiscal", type: "RPA", gain: "R$ 72.000/ano" },
     { title: "Relatório CTe (Cruzamento)", desc: "Auditoria automática comparando dados de CTe entre sistemas Senior e ESL.", area: "Recebimento Fiscal", type: "RPA", gain: "6h/semana" },
     { title: "Solução Devolução NF", desc: "Workflow digital que centraliza e agiliza o processo de devolução de mercadorias.", area: "Recebimento Fiscal", type: "Ferramenta Web", gain: "Sem retrabalho" },
-    { title: "Conversor Bancário OFX", desc: "Ferramenta que converte extratos diversos para padrão OFX importável no ERP.", area: "Financeiro", type: "RPA", gain: "R$ 2.000/mês" },
+    { title: "Conversor Bancário OFX", desc: "Ferramenta que converte extratos diversos para padrão OFX importável no ERP.", area: "Financeiro", type: "RPA", gain: "R$ 48.000/ano" },
     { title: "Extrator Relatório Webclient", desc: "Coleta automática de dados de múltiplos relatórios para consolidar visão do SAC.", area: "Atendimento", type: "RPA", gain: "Agilidade" },
     { title: "Monitoramento E-mails EDI", desc: "Vigilância 24/7 de e-mails de ocorrências EDI com download automático.", area: "TI / RPA", type: "RPA", gain: "Automático" },
     { title: "Integração SFTP Loggi", desc: "Ponte automatizada entre arquivos da Loggi e servidores internos via SFTP.", area: "TI / RPA", type: "RPA", gain: "Integração" },
@@ -300,7 +306,7 @@ window.filterWeb = (category, btn) => {
 const siteTemplates = {
     // 1. Silva & Souza Advogados (Institucional Premium)
     'Silva & Souza Advogados': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-[#0a0a0a] text-gray-300 font-['Lato']">
             <nav class="fixed w-full z-50 bg-[#0a0a0a]/95 backdrop-blur border-b border-[#D4AF37]/20 p-6 flex justify-between items-center">
                 <div class="text-2xl font-['Playfair_Display'] text-[#D4AF37] tracking-widest uppercase font-bold flex items-center gap-2"><i class="fas fa-scale-balanced"></i> ${title}</div>
@@ -371,7 +377,7 @@ const siteTemplates = {
 
     // 2. Direito Trabalhista Express (Landing Page Alta Conversão)
     'Direito Trabalhista Express': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-gray-50 font-sans">
             <nav class="bg-red-700 text-white p-4 flex justify-between items-center shadow-md sticky top-0 z-50">
                 <div class="font-bold text-xl uppercase flex items-center gap-2"><i class="fas fa-gavel"></i> ${title}</div>
@@ -400,7 +406,7 @@ const siteTemplates = {
 
     // 3. Contábil Prime (Corporativo Clean)
     'Contábil Prime': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.js" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.js" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-slate-50 text-slate-800 font-sans overflow-x-hidden">
             <header class="bg-white/90 backdrop-blur shadow-sm fixed w-full z-40 p-4 transition-all">
                 <div class="max-w-7xl mx-auto flex justify-between items-center">
@@ -467,7 +473,7 @@ const siteTemplates = {
 
     // 4. Gestão Fiscal Pro (Dashboard SaaS)
     'Gestão Fiscal Pro': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-gray-100 font-sans flex h-screen overflow-hidden">
             <aside class="w-64 bg-slate-900 text-slate-300 flex flex-col shadow-xl z-20 hidden md:flex">
                 <div class="p-6 text-white font-bold text-xl flex items-center gap-2 border-b border-slate-800"><div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center"><i class="fas fa-chart-pie"></i></div> ${title.split(' ')[0]}</div>
@@ -517,7 +523,7 @@ const siteTemplates = {
 
     // 5. Bistrô Sabor & Arte (Gastronomia Imersiva)
     'Bistrô Sabor & Arte': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-stone-950 text-white font-['Open_Sans']">
             <nav class="absolute w-full z-50 p-8 flex justify-between items-center">
                 <div class="font-['Oswald'] text-3xl text-amber-500 uppercase tracking-tighter cursor-pointer">${title}</div>
@@ -586,7 +592,7 @@ const siteTemplates = {
 
     // 6. Clínica Bem Estar (Saúde Clean)
     'Clínica Bem Estar': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-white text-gray-700 font-sans">
             <div class="bg-teal-600 text-white py-2 text-center text-sm font-medium tracking-wide">
                 <i class="fas fa-phone-alt mr-2"></i> Agende sua consulta: (11) 99999-9999
@@ -662,7 +668,7 @@ const siteTemplates = {
 
     // 7. Imóveis Luxo SP (Imobiliária High-End)
     'Imóveis Luxo SP': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-white font-sans overflow-x-hidden">
             <header class="absolute w-full z-20 flex justify-between items-center p-8 text-white">
                 <div class="text-3xl font-bold tracking-widest uppercase drop-shadow-md">${title}</div>
@@ -763,7 +769,7 @@ const siteTemplates = {
 
     // 8. Tech Gadgets Store (E-commerce Dark Mode)
     'Tech Gadgets Store': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-neutral-950 text-white font-sans selection:bg-white selection:text-black">
             <nav class="fixed w-full z-50 border-b border-white/10 p-6 flex justify-between items-center bg-neutral-950/80 backdrop-blur">
                 <div class="text-2xl font-bold uppercase tracking-tighter">${title}</div>
@@ -840,7 +846,7 @@ const siteTemplates = {
 
     // 9. Moda Sustentável (Fashion Minimalist)
     'Moda Sustentável': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-[#f5f5f0] text-[#333] font-sans">
             <nav class="p-8 flex justify-between items-center">
                 <div class="text-xl font-bold tracking-widest uppercase text-[#5a5a50]">${title}</div>
@@ -879,7 +885,7 @@ const siteTemplates = {
 
     // 10. Portfólio Fotógrafo (Creative Gallery)
     'Portfólio Fotógrafo': (title) => `
-        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script></head>
+        <!DOCTYPE html><html lang="pt-br"><head><script src="https://cdn.tailwindcss.com"><\/script><script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"><\/script></head>
         <body class="bg-[#121212] text-white font-mono">
             <nav class="p-8 flex justify-between items-center fixed w-full z-50 mix-blend-difference">
                 <div class="text-xl font-bold tracking-widest">${title}</div>
@@ -1013,7 +1019,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { text: "async", color: "text-purple-400" }, { text: " def", color: "text-blue-300" },
         { text: " executar_automacao", color: "text-yellow-200" }, { text: "():", color: "text-white", break: true },
         { text: "  const ", color: "text-purple-400", indent: true }, { text: "economia ", color: "text-white" },
-        { text: "= ", color: "text-blue-300" }, { text: "'+R$ 250.000,00'", color: "text-green-400", break: true },
+        { text: "= ", color: "text-blue-300" }, { text: "'+R$ 1.400.000,00'", color: "text-green-400", break: true },
         { text: "  await ", color: "text-purple-400", indent: true }, { text: "bot.processar_dados()", color: "text-white", break: true },
         { text: "  return ", color: "text-purple-400", indent: true }, { text: "economia", color: "text-white" }
     ];
