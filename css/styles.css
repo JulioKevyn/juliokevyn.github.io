@@ -525,8 +525,8 @@ html.lenis, html.lenis body { height: auto; }
 .try-table th { position: sticky; top: 0; background: var(--surface-2); text-align: left; font-size: 12px; color: var(--muted); padding: 10px 14px; white-space: nowrap; }
 .try-table td { padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
 .try-table td:first-child { font-family: var(--f-mono); white-space: nowrap; }
-.pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; background: rgba(251, 113, 133, .14); color: #fb7185; }
-.pill.ok { background: rgba(52, 211, 153, .14); color: var(--ok); }
+.try-pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; background: rgba(251, 113, 133, .14); color: #fb7185; }
+.try-pill.ok { background: rgba(52, 211, 153, .14); color: var(--ok); }
 @media (max-width: 860px) {
     .try-grid { grid-template-columns: 1fr; }
     .try-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }

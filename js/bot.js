@@ -132,7 +132,7 @@ function initBot() {
             <td data-l="${botEscape(tr('colType'))}">${botEscape(r.type || '-')}</td>
             <td data-l="${botEscape(tr('colResult'))}">${r.status ? botEscape(r.result || '-') : '<span class="dim">...</span>'}</td>
             <td data-l="${botEscape(tr('colCity'))}">${botEscape(r.city || '-')}</td>
-            <td data-l="${botEscape(tr('colStatus'))}">${r.status ? `<span class="pill ${r.status}">${botEscape(statusLabel[r.status])}</span>` : ''}</td>
+            <td data-l="${botEscape(tr('colStatus'))}">${r.status ? `<span class="try-pill ${r.status}">${botEscape(statusLabel[r.status])}</span>` : ''}</td>
         </tr>`).join('');
     }
 
