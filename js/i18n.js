@@ -315,7 +315,7 @@ function detectLang() {
 const chosenLang = detectLang();
 const LANG = chosenLang || 'pt';
 
-function t(key) {
+function tr(key) {
     return (UI[LANG] && UI[LANG][key]) || UI.pt[key] || key;
 }
 

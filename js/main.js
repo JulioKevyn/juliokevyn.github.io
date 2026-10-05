@@ -49,12 +49,12 @@ function typeIcon(rawType) {
 /* ---------- Textos e idioma ---------- */
 function applyTranslations() {
     document.documentElement.lang = LANG === 'pt' ? 'pt-br' : LANG;
-    document.title = t('pageTitle');
-    $('meta[name="description"]').setAttribute('content', t('metaDesc'));
-    $$('[data-i18n]').forEach(el => { el.textContent = t(el.dataset.i18n); });
-    $$('[data-i18n-html]').forEach(el => { el.innerHTML = t(el.dataset.i18nHtml); });
-    $$('[data-i18n-label]').forEach(el => { el.setAttribute('aria-label', t(el.dataset.i18nLabel)); });
-    $('#whatsapp-link').href = `https://wa.me/5511966209914?text=${encodeURIComponent(t('waText'))}`;
+    document.title = tr('pageTitle');
+    $('meta[name="description"]').setAttribute('content', tr('metaDesc'));
+    $$('[data-i18n]').forEach(el => { el.textContent = tr(el.dataset.i18n); });
+    $$('[data-i18n-html]').forEach(el => { el.innerHTML = tr(el.dataset.i18nHtml); });
+    $$('[data-i18n-label]').forEach(el => { el.setAttribute('aria-label', tr(el.dataset.i18nLabel)); });
+    $('#whatsapp-link').href = `https://wa.me/5511966209914?text=${encodeURIComponent(tr('waText'))}`;
 
     $$('[data-set-lang]').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.setLang === LANG);
@@ -195,10 +195,10 @@ function initTerminal() {
     const status = $('#status');
     const tokens = [
         ['k', 'import'], ['', ' rpa_module '], ['k', 'as'], ['', ' bot\n\n'],
-        ['k', 'async def '], ['f', t('codeFn')], ['', '():\n'],
-        ['', '    '], ['v', t('codeVar')], ['', ' = '], ['s', t('codeValue')], ['', '\n'],
+        ['k', 'async def '], ['f', tr('codeFn')], ['', '():\n'],
+        ['', '    '], ['v', tr('codeVar')], ['', ' = '], ['s', tr('codeValue')], ['', '\n'],
         ['', '    '], ['k', 'await'], ['', ' bot.run()\n'],
-        ['', '    '], ['k', 'return '], ['v', t('codeVar')]
+        ['', '    '], ['k', 'return '], ['v', tr('codeVar')]
     ];
 
     const finish = () => { el.classList.remove('caret'); status.classList.add('show'); };
@@ -259,8 +259,8 @@ function initStory() {
     const numLabel = $('#story-num-label');
     const steps = $$('.story-step', story);
     const rails = $$('.story-rail b', story);
-    num.textContent = t('storyBig');
-    numLabel.textContent = t('storyBigLabel');
+    num.textContent = tr('storyBig');
+    numLabel.textContent = tr('storyBigLabel');
 
     const N = 9;
     const hex = h => [1, 3, 5].map(i => parseInt(h.slice(i, i + 2), 16));
@@ -372,18 +372,18 @@ function initCarousel() {
         <article class="slide" role="group" aria-roledescription="slide" aria-label="${i + 1} / ${items.length}">
             <div>
                 <div class="slide-tags">
-                    <span class="tag hl"><i class="fas fa-star"></i> ${t('highlight')}</span>
+                    <span class="tag hl"><i class="fas fa-star"></i> ${tr('highlight')}</span>
                     <span class="tag">${p.area}</span>
                     <span class="tag">${p.type}</span>
                 </div>
                 <h3>${p.title}</h3>
                 <p>${p.desc}</p>
-                <div class="gain-chip"><small>${t('gain')}</small><strong>${p.gain}</strong></div>
+                <div class="gain-chip"><small>${tr('gain')}</small><strong>${p.gain}</strong></div>
             </div>
             <div class="slide-visual"><div class="orb"><i class="fas ${typeIcon(p.rawType)}"></i></div></div>
         </article>`).join('');
 
-    dots.innerHTML = items.map((_, i) => `<button aria-label="${t('goSlide')} ${i + 1}"></button>`).join('');
+    dots.innerHTML = items.map((_, i) => `<button aria-label="${tr('goSlide')} ${i + 1}"></button>`).join('');
     const dotBtns = $$('button', dots);
 
     let index = 0, timer = null, hover = false, inView = false;
@@ -457,7 +457,7 @@ function initCatalog() {
     let area = 'ALL', page = 1;
 
     filtersEl.innerHTML = areas.map((a, i) =>
-        `<button class="chip" data-i="${i}" aria-pressed="${a === 'ALL'}">${a === 'ALL' ? t('all') : a}</button>`).join('');
+        `<button class="chip" data-i="${i}" aria-pressed="${a === 'ALL'}">${a === 'ALL' ? tr('all') : a}</button>`).join('');
 
     filtersEl.addEventListener('click', e => {
         const b = e.target.closest('.chip');
@@ -483,17 +483,17 @@ function initCatalog() {
         const pages = Math.max(1, Math.ceil(list.length / PER_PAGE));
         page = Math.min(page, pages);
         const items = list.slice((page - 1) * PER_PAGE, page * PER_PAGE);
-        grid.innerHTML = items.length ? items.map(card).join('') : `<p class="card-area">${t('empty')}</p>`;
+        grid.innerHTML = items.length ? items.map(card).join('') : `<p class="card-area">${tr('empty')}</p>`;
 
         if (pages <= 1) { pag.innerHTML = ''; }
         else {
-            let html = `<button data-p="${page - 1}" ${page === 1 ? 'disabled' : ''} aria-label="${t('prevPage')}"><i class="fas fa-chevron-left"></i></button>`;
+            let html = `<button data-p="${page - 1}" ${page === 1 ? 'disabled' : ''} aria-label="${tr('prevPage')}"><i class="fas fa-chevron-left"></i></button>`;
             for (let i = 1; i <= pages; i++) {
                 if (i === 1 || i === pages || Math.abs(i - page) <= 1) {
-                    html += `<button data-p="${i}" aria-label="${t('page')} ${i}" ${i === page ? 'aria-current="page"' : ''}>${i}</button>`;
+                    html += `<button data-p="${i}" aria-label="${tr('page')} ${i}" ${i === page ? 'aria-current="page"' : ''}>${i}</button>`;
                 } else if (Math.abs(i - page) === 2) html += `<span aria-hidden="true">…</span>`;
             }
-            html += `<button data-p="${page + 1}" ${page === pages ? 'disabled' : ''} aria-label="${t('nextPage')}"><i class="fas fa-chevron-right"></i></button>`;
+            html += `<button data-p="${page + 1}" ${page === pages ? 'disabled' : ''} aria-label="${tr('nextPage')}"><i class="fas fa-chevron-right"></i></button>`;
             pag.innerHTML = html;
         }
 
@@ -598,7 +598,7 @@ function initWeb() {
                 <h3>${p.title}</h3>
                 <p>${p.desc}</p>
                 <div class="techs">${p.tech.map(x => `<span>${x}</span>`).join('')}</div>
-                <button class="open-demo" type="button">${t('openDemo')} <i class="fas fa-arrow-up-right-from-square"></i></button>
+                <button class="open-demo" type="button">${tr('openDemo')} <i class="fas fa-arrow-up-right-from-square"></i></button>
             </div>
         </article>`;
     };
