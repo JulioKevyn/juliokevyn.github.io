@@ -94,12 +94,7 @@ h1, h2, h3, p { margin: 0; }
 .header.scrolled { border-bottom-color: var(--line); background: rgba(8, 11, 17, .96); }
 .header .wrap { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
 
-.logo { font-family: var(--f-mono); font-weight: 500; font-size: 15px; display: flex; align-items: center; gap: 10px; }
-.logo-mark {
-    width: 30px; height: 30px; border-radius: 8px; display: grid; place-items: center;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #031018; font-weight: 700; font-size: 13px;
-}
-.logo span.ext { color: var(--accent); }
+.logo { font-family: var(--f-body); font-weight: 800; font-size: 18px; letter-spacing: -.01em; }
 
 .nav { display: flex; align-items: center; gap: 28px; }
 .nav a:not(.btn) { font-size: 14px; font-weight: 600; color: var(--muted); transition: color .2s; }
@@ -499,3 +494,45 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
+
+/* ---------- Teste um robô ---------- */
+.try { background: var(--ink); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.try-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: stretch; }
+.try-panel { display: flex; flex-direction: column; gap: 14px; }
+.try-label { font-weight: 700; font-size: 14px; color: var(--muted); }
+.try-input {
+    width: 100%; flex-grow: 1; min-height: 190px; resize: vertical; padding: 16px; border-radius: var(--r-md);
+    background: var(--surface); border: 1px solid var(--line-2); color: var(--text); font: 14px/1.7 var(--f-mono);
+}
+.try-input:focus { outline: none; border-color: var(--accent); }
+.try-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.try-actions .btn[disabled], .try-out .btn[disabled] { opacity: .55; cursor: not-allowed; }
+.try-note { color: var(--dim); font-size: 13px; }
+.try-term { display: flex; flex-direction: column; box-shadow: none; }
+.try-term .terminal-bar { justify-content: flex-start; gap: 14px; }
+.try-log { padding: 16px 18px; height: 280px; overflow-y: auto; font-size: 13px; line-height: 1.75; color: #c9d4e3; }
+.try-log .dim, .try-table .dim { color: var(--dim); }
+.try-log .ok { color: var(--ok); }
+.try-log .bad { color: #fb7185; }
+.try-out { margin-top: 28px; display: grid; gap: 18px; justify-items: start; }
+.try-out[hidden] { display: none; }
+.try-stats { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; width: 100%; }
+.try-stats div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-md); padding: 14px 16px; display: grid; gap: 2px; }
+.try-stats strong { font-family: var(--f-display); font-size: 22px; font-weight: 600; }
+.try-stats span { color: var(--muted); font-size: 12px; }
+.try-table-wrap { width: 100%; max-height: 420px; overflow: auto; border: 1px solid var(--line); border-radius: var(--r-md); background: var(--surface); }
+.try-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.try-table th { position: sticky; top: 0; background: var(--surface-2); text-align: left; font-size: 12px; color: var(--muted); padding: 10px 14px; white-space: nowrap; }
+.try-table td { padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+.try-table td:first-child { font-family: var(--f-mono); white-space: nowrap; }
+.pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; white-space: nowrap; background: rgba(251, 113, 133, .14); color: #fb7185; }
+.pill.ok { background: rgba(52, 211, 153, .14); color: var(--ok); }
+@media (max-width: 860px) {
+    .try-grid { grid-template-columns: 1fr; }
+    .try-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .try-table thead { display: none; }
+    .try-table, .try-table tbody, .try-table tr, .try-table td { display: block; width: 100%; }
+    .try-table tr { border-top: 1px solid var(--line); padding: 8px 0; }
+    .try-table td { border: 0; padding: 4px 14px; }
+    .try-table td::before { content: attr(data-l) ': '; color: var(--dim); font-size: 12px; }
+}

@@ -35,6 +35,16 @@ const UI = {
         ctaWhats: 'Conversar no WhatsApp',
         waText: 'Olá Julio! Vi seu portfólio e gostaria de um orçamento.',
         langTitle: 'Escolha o idioma', langSub: 'Choose your language · Elige tu idioma',
+        navTry: 'Teste um robô',
+        tryTitle: 'Rode uma automação agora', tryText: 'Cole CEPs ou CNPJs, um por linha. O robô consulta tudo sozinho e devolve uma tabela pronta para baixar. É o mesmo tipo de trabalho que eu automatizo nas empresas.',
+        tryInput: 'Lista de CEPs ou CNPJs', trySample: 'Usar exemplos', tryClear: 'Limpar', tryRun: 'Executar robô', tryRunning: 'Executando...',
+        tryCsv: 'Baixar CSV', tryPriv: 'Roda no seu navegador e consulta a API pública BrasilAPI. Nada é salvo. Máximo de 30 itens por execução.',
+        tryEmpty: 'Cole ao menos um CEP (8 dígitos) ou CNPJ (14 dígitos).', tryMax: 'Limite de 30 itens: o restante foi ignorado.',
+        tryLogTitle: 'robo_consulta.log', tryIdle: 'Aguardando execução...',
+        tryLogStart: 'iniciando robô', tryLogRead: 'itens lidos', tryLogQuery: 'consultando', tryLogOk: 'ok', tryLogEnd: 'finalizado',
+        colInput: 'Entrada', colType: 'Tipo', colResult: 'Resultado', colCity: 'Cidade/UF', colStatus: 'Status',
+        stItems: 'itens', stOk: 'com sucesso', stErr: 'com erro', stBot: 'tempo do robô', stManual: 'à mão (~40 s/item)',
+        sOk: 'OK', sNotFound: 'Não encontrado', sInvalid: 'Formato inválido', sNet: 'Falha de rede', sLimit: 'Limite da API, tente de novo',
         rights: 'Todos os direitos reservados.'
     },
     en: {
@@ -69,6 +79,16 @@ const UI = {
         ctaWhats: 'Chat on WhatsApp',
         waText: 'Hi Julio! I saw your portfolio and would like a quote.',
         langTitle: 'Choose your language', langSub: 'Escolha o idioma · Elige tu idioma',
+        navTry: 'Try a bot',
+        tryTitle: 'Run an automation now', tryText: 'Paste Brazilian ZIP codes (CEP) or company IDs (CNPJ), one per line. The bot looks everything up by itself and hands back a table ready to download. It is the same kind of work I automate for companies.',
+        tryInput: 'List of CEPs or CNPJs', trySample: 'Use examples', tryClear: 'Clear', tryRun: 'Run bot', tryRunning: 'Running...',
+        tryCsv: 'Download CSV', tryPriv: 'Runs in your browser and queries the public BrasilAPI. Nothing is saved. Up to 30 items per run.',
+        tryEmpty: 'Paste at least one CEP (8 digits) or CNPJ (14 digits).', tryMax: '30-item limit: the rest was ignored.',
+        tryLogTitle: 'lookup_bot.log', tryIdle: 'Waiting for a run...',
+        tryLogStart: 'starting bot', tryLogRead: 'items read', tryLogQuery: 'querying', tryLogOk: 'ok', tryLogEnd: 'finished',
+        colInput: 'Input', colType: 'Type', colResult: 'Result', colCity: 'City/State', colStatus: 'Status',
+        stItems: 'items', stOk: 'succeeded', stErr: 'failed', stBot: 'bot time', stManual: 'by hand (~40 s/item)',
+        sOk: 'OK', sNotFound: 'Not found', sInvalid: 'Invalid format', sNet: 'Network error', sLimit: 'API limit, try again',
         rights: 'All rights reserved.'
     },
     es: {
@@ -103,6 +123,16 @@ const UI = {
         ctaWhats: 'Hablar por WhatsApp',
         waText: '¡Hola Julio! Vi tu portafolio y me gustaría un presupuesto.',
         langTitle: 'Elige tu idioma', langSub: 'Escolha o idioma · Choose your language',
+        navTry: 'Prueba un robot',
+        tryTitle: 'Ejecuta una automatización ahora', tryText: 'Pega CEP o CNPJ brasileños, uno por línea. El robot consulta todo solo y devuelve una tabla lista para descargar. Es el mismo tipo de trabajo que automatizo en las empresas.',
+        tryInput: 'Lista de CEP o CNPJ', trySample: 'Usar ejemplos', tryClear: 'Limpiar', tryRun: 'Ejecutar robot', tryRunning: 'Ejecutando...',
+        tryCsv: 'Descargar CSV', tryPriv: 'Se ejecuta en tu navegador y consulta la API pública BrasilAPI. No se guarda nada. Máximo 30 elementos por ejecución.',
+        tryEmpty: 'Pega al menos un CEP (8 dígitos) o CNPJ (14 dígitos).', tryMax: 'Límite de 30 elementos: el resto se ignoró.',
+        tryLogTitle: 'robot_consulta.log', tryIdle: 'Esperando ejecución...',
+        tryLogStart: 'iniciando robot', tryLogRead: 'elementos leídos', tryLogQuery: 'consultando', tryLogOk: 'ok', tryLogEnd: 'finalizado',
+        colInput: 'Entrada', colType: 'Tipo', colResult: 'Resultado', colCity: 'Ciudad/Estado', colStatus: 'Estado',
+        stItems: 'elementos', stOk: 'con éxito', stErr: 'con error', stBot: 'tiempo del robot', stManual: 'a mano (~40 s/elem.)',
+        sOk: 'OK', sNotFound: 'No encontrado', sInvalid: 'Formato inválido', sNet: 'Error de red', sLimit: 'Límite de la API, reintenta',
         rights: 'Todos los derechos reservados.'
     }
 };
