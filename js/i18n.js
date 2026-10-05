@@ -46,6 +46,10 @@ const UI = {
         stItems: 'itens', stOk: 'com sucesso', stErr: 'com erro', stBot: 'tempo do robô', stManual: 'à mão (~40 s/item)',
         sOk: 'OK', sNotFound: 'Não encontrado', sInvalid: 'Formato inválido', sNet: 'Falha de rede', sLimit: 'Limite da API, tente de novo',
         titleRpa: 'Automações e RPA | Julio Marques', titleWeb: 'Sites e sistemas web | Julio Marques', titleTry: 'Teste um robô | Julio Marques',
+        goTitle: 'Veja na prática', goText: 'Três formas de conhecer o trabalho, cada uma em sua página.', goOpen: 'Abrir', nextUp: 'Continue vendo',
+        goTryT: 'Teste um robô', goTryP: 'Cole CEPs ou CNPJs e veja uma automação rodando ao vivo no seu navegador.',
+        goRpaT: 'Automações e RPA', goRpaP: 'Robôs e sistemas em produção, com o ganho de cada um e as marcas impactadas.',
+        goWebT: 'Sites e sistemas web', goWebP: 'Demonstrações navegáveis por segmento, em desktop e celular.',
         rights: 'Todos os direitos reservados.'
     },
     en: {
@@ -91,6 +95,10 @@ const UI = {
         stItems: 'items', stOk: 'succeeded', stErr: 'failed', stBot: 'bot time', stManual: 'by hand (~40 s/item)',
         sOk: 'OK', sNotFound: 'Not found', sInvalid: 'Invalid format', sNet: 'Network error', sLimit: 'API limit, try again',
         titleRpa: 'Automation & RPA | Julio Marques', titleWeb: 'Websites and web systems | Julio Marques', titleTry: 'Try a bot | Julio Marques',
+        goTitle: 'See it in action', goText: 'Three ways to get to know the work, each on its own page.', goOpen: 'Open', nextUp: 'Keep exploring',
+        goTryT: 'Try a bot', goTryP: 'Paste ZIP codes or company IDs and watch an automation run live in your browser.',
+        goRpaT: 'Automation & RPA', goRpaP: 'Bots and systems in production, with the gain of each one and the brands they impacted.',
+        goWebT: 'Websites and web systems', goWebP: 'Browsable demos by industry, on desktop and mobile.',
         rights: 'All rights reserved.'
     },
     es: {
@@ -136,6 +144,10 @@ const UI = {
         stItems: 'elementos', stOk: 'con éxito', stErr: 'con error', stBot: 'tiempo del robot', stManual: 'a mano (~40 s/elem.)',
         sOk: 'OK', sNotFound: 'No encontrado', sInvalid: 'Formato inválido', sNet: 'Error de red', sLimit: 'Límite de la API, reintenta',
         titleRpa: 'Automatización y RPA | Julio Marques', titleWeb: 'Sitios y sistemas web | Julio Marques', titleTry: 'Prueba un robot | Julio Marques',
+        goTitle: 'Míralo en la práctica', goText: 'Tres formas de conocer el trabajo, cada una en su página.', goOpen: 'Abrir', nextUp: 'Sigue explorando',
+        goTryT: 'Prueba un robot', goTryP: 'Pega CEP o CNPJ y mira una automatización ejecutándose en vivo en tu navegador.',
+        goRpaT: 'Automatización y RPA', goRpaP: 'Robots y sistemas en producción, con la ganancia de cada uno y las marcas impactadas.',
+        goWebT: 'Sitios y sistemas web', goWebP: 'Demostraciones navegables por segmento, en escritorio y celular.',
         rights: 'Todos los derechos reservados.'
     }
 };

@@ -73,7 +73,21 @@
         </div>
     </dialog>`;
 
-    const parts = { 'site-header': header, 'site-contact': contact, 'site-footer': footer, 'site-lang': lang };
+    // Convite para a próxima página, para o site não "acabar" no meio
+    const NEXT = { try: ['automacoes.html', 'fa-robot', 'goRpa'], rpa: ['sites.html', 'fa-globe', 'goWeb'], web: ['teste.html', 'fa-flask', 'goTry'] };
+    const nx = NEXT[page];
+    const next = nx ? `
+    <section class="section next">
+        <div class="wrap">
+            <a class="next-link" href="${nx[0]}">
+                <span class="next-eyebrow" data-i18n="nextUp">Continue vendo</span>
+                <span class="next-title"><span data-i18n="${nx[2]}T"></span> <i class="fas fa-arrow-right"></i></span>
+                <span class="next-text" data-i18n="${nx[2]}P"></span>
+            </a>
+        </div>
+    </section>` : '';
+
+    const parts = { 'site-header': header, 'site-contact': next + contact, 'site-footer': footer, 'site-lang': lang };
     for (const [id, html] of Object.entries(parts)) {
         const slot = document.getElementById(id);
         if (slot) slot.outerHTML = html;
