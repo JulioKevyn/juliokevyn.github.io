@@ -49,7 +49,7 @@ function typeIcon(rawType) {
 /* ---------- Textos e idioma ---------- */
 function applyTranslations() {
     document.documentElement.lang = LANG === 'pt' ? 'pt-br' : LANG;
-    document.title = tr('pageTitle');
+    document.title = tr(document.body.dataset.title || 'pageTitle');
     $('meta[name="description"]').setAttribute('content', tr('metaDesc'));
     $$('[data-i18n]').forEach(el => { el.textContent = tr(el.dataset.i18n); });
     $$('[data-i18n-html]').forEach(el => { el.innerHTML = tr(el.dataset.i18nHtml); });
@@ -660,12 +660,14 @@ document.addEventListener('DOMContentLoaded', () => {
     applyTranslations();
     initHeader();
     initAnchors();
-    initHeroCanvas();
-    initTerminal();
+    // Cada página só tem parte dos blocos: inicia apenas o que existe nela
+    const when = (sel, fn) => { if ($(sel)) fn(); };
+    when('#hero-canvas', initHeroCanvas);
+    when('#code', initTerminal);
     initCounters();
-    initStory();
-    initCarousel();
-    initCatalog();
-    initBrands();
-    initWeb();
+    when('#story', initStory);
+    when('#carousel', initCarousel);
+    when('#rpa-grid', initCatalog);
+    when('#marquee', initBrands);
+    when('#web-grid', initWeb);
 });

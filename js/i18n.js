@@ -45,6 +45,7 @@ const UI = {
         colInput: 'Entrada', colType: 'Tipo', colResult: 'Resultado', colCity: 'Cidade/UF', colStatus: 'Status',
         stItems: 'itens', stOk: 'com sucesso', stErr: 'com erro', stBot: 'tempo do robô', stManual: 'à mão (~40 s/item)',
         sOk: 'OK', sNotFound: 'Não encontrado', sInvalid: 'Formato inválido', sNet: 'Falha de rede', sLimit: 'Limite da API, tente de novo',
+        titleRpa: 'Automações e RPA | Julio Marques', titleWeb: 'Sites e sistemas web | Julio Marques', titleTry: 'Teste um robô | Julio Marques',
         rights: 'Todos os direitos reservados.'
     },
     en: {
@@ -89,6 +90,7 @@ const UI = {
         colInput: 'Input', colType: 'Type', colResult: 'Result', colCity: 'City/State', colStatus: 'Status',
         stItems: 'items', stOk: 'succeeded', stErr: 'failed', stBot: 'bot time', stManual: 'by hand (~40 s/item)',
         sOk: 'OK', sNotFound: 'Not found', sInvalid: 'Invalid format', sNet: 'Network error', sLimit: 'API limit, try again',
+        titleRpa: 'Automation & RPA | Julio Marques', titleWeb: 'Websites and web systems | Julio Marques', titleTry: 'Try a bot | Julio Marques',
         rights: 'All rights reserved.'
     },
     es: {
@@ -133,6 +135,7 @@ const UI = {
         colInput: 'Entrada', colType: 'Tipo', colResult: 'Resultado', colCity: 'Ciudad/Estado', colStatus: 'Estado',
         stItems: 'elementos', stOk: 'con éxito', stErr: 'con error', stBot: 'tiempo del robot', stManual: 'a mano (~40 s/elem.)',
         sOk: 'OK', sNotFound: 'No encontrado', sInvalid: 'Formato inválido', sNet: 'Error de red', sLimit: 'Límite de la API, reintenta',
+        titleRpa: 'Automatización y RPA | Julio Marques', titleWeb: 'Sitios y sistemas web | Julio Marques', titleTry: 'Prueba un robot | Julio Marques',
         rights: 'Todos los derechos reservados.'
     }
 };

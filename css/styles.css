@@ -226,7 +226,7 @@ h1, h2, h3, p { margin: 0; }
 /* ---------- Seções ---------- */
 .section { padding: clamp(80px, 11vw, 140px) 0; position: relative; }
 .section-head { max-width: 720px; margin-bottom: 48px; }
-.section-head h2 { font-family: var(--f-display); font-weight: 600; font-size: clamp(28px, 3.8vw, 46px); line-height: 1.1; letter-spacing: -.02em; }
+.section-head h1, .section-head h2 { font-family: var(--f-display); font-weight: 600; font-size: clamp(28px, 3.8vw, 46px); line-height: 1.1; letter-spacing: -.02em; }
 .section-head p { color: var(--muted); margin-top: 14px; font-size: 17px; }
 
 /* ---------- História com scroll (estilo Apple) ---------- */
@@ -536,3 +536,8 @@ html.lenis, html.lenis body { height: auto; }
     .try-table td { border: 0; padding: 4px 14px; }
     .try-table td::before { content: attr(data-l) ': '; color: var(--dim); font-size: 12px; }
 }
+
+
+/* ---------- Páginas internas ---------- */
+.page { padding-top: var(--header); }
+.nav a[aria-current="page"]:not(.btn) { color: var(--text); }
