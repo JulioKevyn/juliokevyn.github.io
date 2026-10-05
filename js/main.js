@@ -11,6 +11,29 @@ const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const weakDevice = (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
                    (navigator.deviceMemory && navigator.deviceMemory <= 4);
 const LITE = reduceMotion || weakDevice;
+
+/* ---------- Rolagem suave (Lenis) ----------
+   A roda do mouse/touchpad desliza com desaceleração em vez de pular de
+   100 em 100px. Só com mouse/touchpad (no toque a rolagem nativa já é
+   suave) e nunca pra quem pediu menos movimento no sistema. */
+let lenis = null;
+function initSmoothScroll() {
+    if (reduceMotion || typeof window.Lenis !== 'function' || !matchMedia('(pointer: fine)').matches) return;
+    lenis = new window.Lenis({
+        duration: 1.2,
+        easing: x => Math.min(1, 1.001 - Math.pow(2, -10 * x)),
+        smoothWheel: true,
+        wheelMultiplier: 1
+    });
+    const raf = time => { lenis.raf(time); requestAnimationFrame(raf); };
+    requestAnimationFrame(raf);
+}
+function scrollToY(y, { instant = false } = {}) {
+    if (lenis) lenis.scrollTo(y, instant ? { immediate: true } : { duration: 1.2 });
+    else scrollTo({ top: y, behavior: instant || reduceMotion ? 'auto' : 'smooth' });
+}
+const pauseScroll = () => lenis && lenis.stop();
+const resumeScroll = () => lenis && lenis.start();
 const LOCALE = { pt: 'pt-BR', en: 'en-US', es: 'es-ES' }[LANG];
 
 const rpaData = rpaProjects.map(localizeRpa);
@@ -39,8 +62,10 @@ function applyTranslations() {
     });
 
     const langDialog = $('#lang-dialog');
+    langDialog.addEventListener('close', resumeScroll);
     if (!chosenLang && langDialog.showModal) {
         langDialog.showModal();
+        pauseScroll();
         langDialog.addEventListener('cancel', () => {
             try { localStorage.setItem('lang', 'pt'); } catch (e) {}
         });
@@ -64,6 +89,39 @@ function initHeader() {
     toggle.addEventListener('click', () => setOpen(!nav.classList.contains('open')));
     $$('a', nav).forEach(a => a.addEventListener('click', () => setOpen(false)));
     addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+}
+
+/* ---------- Links de âncora ----------
+   Rolagem suave por cima da história faria os blocos mudarem de forma em
+   sequência, parecendo falha. Quando o caminho atravessa a história, pula
+   direto pro destino com um fade rápido; caminhos curtos rolam suave. */
+function initAnchors() {
+    const story = $('#story');
+    $$('a[href^="#"]').forEach(a => {
+        if (a.classList.contains('skip-link')) return;
+        a.addEventListener('click', e => {
+            const id = a.getAttribute('href');
+            const target = id.length > 1 ? document.querySelector(id) : null;
+            if (!target) return;
+            const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+            const from = scrollY;
+            const to = id === '#top' ? 0 : Math.max(0, target.getBoundingClientRect().top + scrollY - pad);
+            let crosses = false;
+            if (story && !reduceMotion) {
+                const sTop = story.getBoundingClientRect().top + scrollY;
+                const sBottom = sTop + story.offsetHeight;
+                crosses = Math.min(from, to) < sBottom - innerHeight * .2 && Math.max(from, to) > sTop + innerHeight * .2;
+            }
+            if (!crosses && !lenis) return; // sem Lenis e caminho curto: rolagem nativa
+            e.preventDefault();
+            scrollToY(to, { instant: crosses });
+            history.replaceState(null, '', id);
+            if (crosses) {
+                target.animate([{ opacity: 0, transform: 'translateY(16px)' }, { opacity: 1, transform: 'none' }],
+                    { duration: 450, easing: 'cubic-bezier(.16,1,.3,1)' });
+            }
+        });
+    });
 }
 
 /* ---------- Fundo do hero (rede de pontos leve) ---------- */
@@ -271,7 +329,7 @@ function initStory() {
         return;
     }
 
-    let active = -1, ticking = false, inView = false;
+    let active = -1, ticking = false, inView = false, lastRaw = -1;
     function update() {
         ticking = false;
         const rect = story.getBoundingClientRect();
@@ -279,6 +337,8 @@ function initStory() {
         const p = Math.min(1, Math.max(0, -rect.top / total));
         // cada etapa segura um pouco antes de transformar
         const raw = p * 3;
+        if (Math.abs(raw - lastRaw) < .0005) return; // nada mudou: não redesenha
+        lastRaw = raw;
         const seg = Math.min(2, Math.floor(raw));
         const local = Math.min(1, Math.max(0, (raw - seg - .2) / .6));
         const k = raw >= 3 ? 3 : seg + local;
@@ -439,7 +499,10 @@ function initCatalog() {
 
         if (scroll) {
             const top = $('#catalogo').getBoundingClientRect().top;
-            if (top < 0) $('#catalogo').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+            if (top < 0) {
+                const pad = parseFloat(getComputedStyle(document.documentElement).scrollPaddingTop) || 0;
+                scrollToY(top + scrollY - pad);
+            }
         }
     }
 
@@ -567,6 +630,7 @@ function initWeb() {
         setDevice('desktop');
         dialog.showModal();
         document.body.style.overflow = 'hidden';
+        pauseScroll();
         setTimeout(() => { frame.srcdoc = buildDemo(title); }, 250);
     }
 
@@ -575,6 +639,7 @@ function initWeb() {
     function closePreview() { dialog.close(); }
     dialog.addEventListener('close', () => {
         document.body.style.overflow = '';
+        resumeScroll();
         frame.srcdoc = '';
         lastFocus && lastFocus.focus();
     });
@@ -590,8 +655,10 @@ function initWeb() {
 
 /* ---------- Início ---------- */
 document.addEventListener('DOMContentLoaded', () => {
+    initSmoothScroll();
     applyTranslations();
     initHeader();
+    initAnchors();
     initHeroCanvas();
     initTerminal();
     initCounters();
