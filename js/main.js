@@ -518,13 +518,14 @@ function initCatalog() {
 
 /* ---------- Marcas ---------- */
 // Logos vêm do Logo.dev pelo domínio de cada empresa.
-// Se quiser um logo específico, salve em img/logos/<slug>.png que ele tem prioridade.
+// Para usar um logo próprio, salve em img/logos/<slug>.png e acrescente o slug em LOCAL_LOGOS.
+const LOCAL_LOGOS = [];
 const LOGO_DEV_TOKEN = 'pk_fgCxeEm8Tzm2nIqRDYs-1Q'; // chave pública do Logo.dev
 
 const BRANDS = [
     ['Mundial Logistics', 'mundial-logistics', 'mundiallogistics.com.br'],
     ['Saint-Gobain', 'saint-gobain', 'saint-gobain.com'],
-    ['Heineken', 'heineken', 'heineken.com'],
+    ['Heineken', 'heineken', 'heineken.com.br'],
     ['PepsiCo', 'pepsico', 'pepsico.com'],
     ['Post-it (3M)', '3m', '3m.com'],
     ['Mondelez', 'mondelez', 'mondelezinternational.com'],
@@ -539,7 +540,7 @@ function initBrands() {
         : '';
     const item = ([name, slug, domain], dup) =>
         `<span class="brand${dup ? ' dup' : ''}"${dup ? ' aria-hidden="true"' : ''}>` +
-        `<img src="img/logos/${slug}.png" data-fallback="${remote(domain)}" alt="${dup ? '' : name}" height="40"><b>${name}</b></span>`;
+        `<img src="${LOCAL_LOGOS.includes(slug) || !remote(domain) ? `img/logos/${slug}.png` : remote(domain)}" data-fallback="${LOCAL_LOGOS.includes(slug) ? remote(domain) : ''}" alt="${dup ? '' : name}" height="40"><b>${name}</b></span>`;
 
     const track = $('#marquee');
     track.innerHTML = BRANDS.map(b => item(b, false)).join('') + BRANDS.map(b => item(b, true)).join('');
