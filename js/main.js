@@ -239,7 +239,7 @@ function initCounters() {
             io.unobserve(e.target);
             const el = e.target, target = +el.dataset.count, start = performance.now(), dur = 1400;
             const run = now => {
-                const p = Math.min(1, (now - start) / dur);
+                const p = Math.min(1, Math.max(0, (now - start) / dur));
                 render(el, Math.round(target * (1 - Math.pow(1 - p, 3))));
                 if (p < 1) requestAnimationFrame(run);
             };
